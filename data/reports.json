@@ -1,0 +1,13 @@
+[
+  {
+    "title": "The United States Oil & Gas Outlook",
+    "date": "2025-04-15",
+    "pdf": "/reports/2025/us-og-outlook.pdf",
+    "summary": "Assessment of supply, demand, and infrastructure.",
+    "categories": ["Oil", "Infrastructure"],
+    "cover": "/reports/2025/us-og-outlook-cover.jpg",
+    "extras": [
+      { "label": "Executive Summary", "href": "/reports/2025/us-og-outlook-exec.pdf" }
+    ]
+  }
+]
