@@ -3,292 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NPC Members | National Petroleum Council</title>
-  <meta name="description" content="Roster of National Petroleum Council (NPC) members and committees." />
-  <link rel="icon" href="/favicon.ico" />
+  <title>NPC Members</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :focus { outline: 3px solid #1d4ed8; outline-offset: 2px; }
-  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-blue-700 px-3 py-2 rounded shadow">Skip to content</a>
-
-  <!-- Top Banner / Gov Notice -->
-  <div class="bg-blue-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 py-2 text-sm">
-      National Petroleum Council — A Federal Advisory Committee to the U.S. Secretary of Energy
-    </div>
-  </div>
-
   <!-- Header -->
   <header class="bg-white border-b">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex items-center justify-between py-4">
-        <div class="flex items-center gap-3">
-          <img src="/assets/npc-logo.svg" alt="NPC Logo" class="h-10 w-auto" onerror="this.style.display='none'" />
-          <a href="/" class="text-xl md:text-2xl font-semibold tracking-tight">National Petroleum Council</a>
-        </div>
-        <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
-          <a class="hover:text-blue-700" href="/">Home</a>
-          <a class="hover:text-blue-700" href="/reports.html">Reports</a>
-          <a class="text-blue-700 font-medium" href="/members.html" aria-current="page">Members</a>
-          <a class="hover:text-blue-700" href="/index.html#contact">Contact</a>
-        </nav>
-        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded border" aria-expanded="false" aria-controls="mobileMenu">
-          <span class="sr-only">Open menu</span>
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <div id="mobileMenu" class="md:hidden hidden pb-4" role="region">
-        <div class="flex flex-col gap-2">
-          <a class="px-2 py-2 rounded hover:bg-gray-100" href="/">Home</a>
-          <a class="px-2 py-2 rounded hover:bg-gray-100" href="/reports.html">Reports</a>
-          <a class="px-2 py-2 rounded bg-blue-50 text-blue-700" href="/members.html">Members</a>
-          <a class="px-2 py-2 rounded hover:bg-gray-100" href="/index.html#contact">Contact</a>
-        </div>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+      <a href="index.html" class="text-xl font-semibold">National Petroleum Council</a>
+      <nav class="flex gap-6">
+        <a href="index.html">Home</a>
+        <a href="reports.html">Reports</a>
+        <a href="members.html" class="font-semibold text-blue-700">Members</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main id="main">
-    <!-- Title -->
-    <section class="bg-gradient-to-b from-blue-50 to-white border-b">
-      <div class="max-w-7xl mx-auto px-4 py-12">
-        <h1 class="text-3xl md:text-4xl font-semibold">NPC Members</h1>
-        <p class="mt-3 max-w-3xl text-gray-700">View the Council roster and filter by organization, committee, or state. This page reads from a data file that can be synced from SharePoint.</p>
-      </div>
-    </section>
+  <!-- Main -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-6">Council Members</h1>
+    <p class="mb-8 text-gray-700">This page lists members of the National Petroleum Council.</p>
 
-    <!-- Controls -->
-    <section class="max-w-7xl mx-auto px-4 py-6">
-      <div class="bg-white border rounded-2xl shadow-sm p-4">
-        <div class="grid md:grid-cols-5 gap-4 items-end">
-          <div class="md:col-span-2">
-            <label for="q" class="block text-sm font-medium">Search</label>
-            <input id="q" type="search" placeholder="Name, organization, role..." class="mt-1 w-full rounded-lg border px-3 py-2" />
-          </div>
-          <div>
-            <label for="org" class="block text-sm font-medium">Organization</label>
-            <select id="org" class="mt-1 w-full rounded-lg border px-3 py-2">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div>
-            <label for="committee" class="block text-sm font-medium">Committee</label>
-            <select id="committee" class="mt-1 w-full rounded-lg border px-3 py-2">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div>
-            <label for="state" class="block text-sm font-medium">State</label>
-            <select id="state" class="mt-1 w-full rounded-lg border px-3 py-2">
-              <option value="">All</option>
-            </select>
-          </div>
-        </div>
-        <div class="mt-4 flex flex-wrap items-center gap-3 text-sm">
-          <button id="clear" class="px-3 py-2 rounded border hover:bg-gray-50">Clear filters</button>
-          <div aria-live="polite" id="count" class="text-gray-700">Loading…</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Roster Table -->
-    <section class="max-w-7xl mx-auto px-4 pb-12">
-      <div class="bg-white border rounded-2xl shadow-sm overflow-hidden">
-        <div class="overflow-x-auto">
-          <table class="min-w-full text-sm" role="table">
-            <thead class="bg-gray-50 border-b">
-              <tr>
-                <th class="text-left px-4 py-3 font-medium">Name</th>
-                <th class="text-left px-4 py-3 font-medium">Organization</th>
-                <th class="text-left px-4 py-3 font-medium">Role</th>
-                <th class="text-left px-4 py-3 font-medium">Committee</th>
-                <th class="text-left px-4 py-3 font-medium">State</th>
-                <th class="text-left px-4 py-3 font-medium">Term</th>
-              </tr>
-            </thead>
-            <tbody id="tbody" class="divide-y"></tbody>
-          </table>
-        </div>
-        <div class="flex items-center justify-between p-3 text-sm">
-          <div id="pageInfo">Page 1</div>
-          <div class="flex gap-2">
-            <button id="prev" class="px-3 py-1.5 rounded border disabled:opacity-50">Prev</button>
-            <button id="next" class="px-3 py-1.5 rounded border disabled:opacity-50">Next</button>
-          </div>
-        </div>
-      </div>
+    <!-- Example Members Table -->
+    <section id="roster">
+      <h2 class="text-2xl font-semibold mb-4">Current Roster</h2>
+      <table class="w-full border-collapse border">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="border px-4 py-2 text-left">Name</th>
+            <th class="border px-4 py-2 text-left">Organization</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2">Jane Doe</td>
+            <td class="border px-4 py-2">Energy Co.</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">John Smith</td>
+            <td class="border px-4 py-2">Oil & Gas Corp.</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-100 border-t">
-    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="text-lg font-semibold">Contact</h3>
-        <address class="not-italic mt-3 text-gray-700">
-          NPC Mailing Address:<br />
-          1101 Vermont Avenue, NW<br />
-          Suite 300<br />
-          Washington, D.C. 20005
-        </address>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold">Telephone & Email</h3>
-        <p class="mt-3 text-gray-700"><span class="font-medium">Telephone:</span> (202) 393-6100</p>
-        <p class="mt-1 text-gray-700"><span class="font-medium">E‑Mail (general information):</span> <a class="text-blue-700 hover:underline" href="mailto:info@npc.org">info@npc.org</a></p>
-        <p class="mt-1 text-gray-700"><span class="font-medium">E‑Mail (web content):</span> <a class="text-blue-700 hover:underline" href="mailto:webmaster@npc.org">webmaster@npc.org</a></p>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold">Links</h3>
-        <ul class="mt-3 space-y-2">
-          <li><a class="text-blue-700 hover:underline" href="/">Home</a></li>
-          <li><a class="text-blue-700 hover:underline" href="/reports.html">Reports</a></li>
-          <li><a class="text-blue-700 hover:underline" href="#">Top of page</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="border-t">
-      <div class="max-w-7xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-        <p>&copy; <span id="year"></span> National Petroleum Council</p>
-        <p>Last updated <time id="lastUpdated" aria-live="polite"></time></p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (menuBtn) menuBtn.addEventListener('click', () => {
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!expanded));
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Footer stamps
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const d = new Date(document.lastModified);
-    document.getElementById('lastUpdated').textContent = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-
-    // ---------- Data & UI ----------
-    // For GitHub Pages, place a JSON at data/members.json
-    // Schema example:
-    // [
-    //  {"name":"Alex Example","organization":"Energy Co.","role":"CEO","state":"TX","committee":"Council","termStart":"2023-01-01","termEnd":"2026-12-31"}
-    // ]
-
-    const DATA_URL = '/data/members.json';
-
-    const qEl = document.getElementById('q');
-    const orgEl = document.getElementById('org');
-    const comEl = document.getElementById('committee');
-    const stEl = document.getElementById('state');
-    const clearEl = document.getElementById('clear');
-    const countEl = document.getElementById('count');
-    const bodyEl = document.getElementById('tbody');
-    const pageInfoEl = document.getElementById('pageInfo');
-    const prevEl = document.getElementById('prev');
-    const nextEl = document.getElementById('next');
-
-    const PAGE_SIZE = 25;
-    let data = [];
-    let page = 1;
-
-    function sanitize(str){
-      return String(str||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
-    }
-
-    function renderRows(rows){
-      const start = (page-1)*PAGE_SIZE;
-      const end = start + PAGE_SIZE;
-      const slice = rows.slice(start,end);
-      bodyEl.innerHTML = slice.map(r=>{
-        const term = [r.termStart, r.termEnd].filter(Boolean).join(' – ');
-        return `<tr>
-          <td class="px-4 py-3">${sanitize(r.name)}</td>
-          <td class="px-4 py-3">${sanitize(r.organization)}</td>
-          <td class="px-4 py-3">${sanitize(r.role||'')}</td>
-          <td class="px-4 py-3">${sanitize(r.committee||'')}</td>
-          <td class="px-4 py-3">${sanitize(r.state||'')}</td>
-          <td class="px-4 py-3">${sanitize(term)}</td>
-        </tr>`;
-      }).join('');
-
-      const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
-      page = Math.min(page, totalPages);
-      prevEl.disabled = page<=1;
-      nextEl.disabled = page>=totalPages;
-      pageInfoEl.textContent = `Page ${page} of ${totalPages}`;
-      countEl.textContent = `${rows.length} member${rows.length===1?'':'s'} shown`;
-    }
-
-    function applyFilters(){
-      const q = (qEl.value||'').toLowerCase().trim();
-      const org = orgEl.value;
-      const com = comEl.value;
-      const st = stEl.value;
-
-      let rows = data.filter(r=>{
-        const hay = `${r.name||''} ${r.organization||''} ${r.role||''} ${r.committee||''} ${r.state||''}`.toLowerCase();
-        const matchesQ = !q || hay.includes(q);
-        const matchesOrg = !org || r.organization===org;
-        const matchesCom = !com || r.committee===com;
-        const matchesSt = !st || r.state===st;
-        return matchesQ && matchesOrg && matchesCom && matchesSt;
-      });
-
-      page = 1;
-      renderRows(rows);
-    }
-
-    function populateFacets(){
-      const orgs = new Set();
-      const coms = new Set();
-      const states = new Set();
-      data.forEach(r=>{
-        if(r.organization) orgs.add(r.organization);
-        if(r.committee) coms.add(r.committee);
-        if(r.state) states.add(r.state);
-      });
-      Array.from(orgs).sort().forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; orgEl.appendChild(o); });
-      Array.from(coms).sort().forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; comEl.appendChild(o); });
-      Array.from(states).sort().forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; stEl.appendChild(o); });
-    }
-
-    async function load(){
-      try{
-        const res = await fetch(DATA_URL, { cache: 'no-store' });
-        if(!res.ok) throw new Error('Failed');
-        const json = await res.json();
-        data = Array.isArray(json)? json : [];
-      }catch(e){
-        // Fallback sample so the page still renders
-        data = [
-          { name:'Jane Doe', organization:'Energy Co.', role:'Member', committee:'Council', state:'TX', termStart:'2023-01-01', termEnd:'2026-12-31' },
-          { name:'John Smith', organization:'Pipeline Partners', role:'Member', committee:'Infrastructure', state:'LA', termStart:'2024-03-01', termEnd:'2027-02-28' }
-        ];
-        countEl.textContent = 'Loaded fallback sample (add data/members.json)';
-      }
-      populateFacets();
-      applyFilters();
-    }
-
-    // Events
-    ;[qEl, orgEl, comEl, stEl].forEach(el=> el.addEventListener('input', applyFilters));
-    document.getElementById('next').addEventListener('click', ()=>{ page++; applyFilters(); });
-    document.getElementById('prev').addEventListener('click', ()=>{ page=Math.max(1,page-1); applyFilters(); });
-    document.getElementById('clear').addEventListener('click', ()=>{
-      qEl.value=''; orgEl.value=''; comEl.value=''; stEl.value=''; page=1; applyFilters(); qEl.focus();
-    });
-
-    load();
-  </script>
 </body>
 </html>
