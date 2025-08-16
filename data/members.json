@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Alex Example",
+    "organization": "Energy Co.",
+    "role": "Member",
+    "committee": "Council",
+    "state": "TX",
+    "termStart": "2023-01-01",
+    "termEnd": "2026-12-31"
+  }
+]
