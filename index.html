@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>National Petroleum Council (NPC)</title>
+  <meta name="description" content="The National Petroleum Council (NPC) is a Federal Advisory Committee to the U.S. Secretary of Energy, providing advice on matters related to oil and natural gas.">
+  <meta property="og:title" content="National Petroleum Council (NPC)" />
+  <meta property="og:description" content="A Federal Advisory Committee to the U.S. Secretary of Energy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://npc.org" />
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Tailwind CSS via CDN for quick iteration; swap to compiled CSS for production -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* High-contrast focus styles for accessibility */
+    :focus { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-blue-700 px-3 py-2 rounded shadow">Skip to content</a>
+
+  <!-- Top Banner / Gov Notice -->
+  <div class="bg-blue-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-2 text-sm">
+      National Petroleum Council — A Federal Advisory Committee to the U.S. Secretary of Energy
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between py-4">
+        <div class="flex items-center gap-3">
+          <img src="/assets/npc-logo.svg" alt="NPC Logo" class="h-10 w-auto" onerror="this.style.display='none'" />
+          <a href="/" class="text-xl md:text-2xl font-semibold tracking-tight">National Petroleum Council</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
+          <a class="hover:text-blue-700" href="/">Home</a>
+          <a class="hover:text-blue-700" href="/reports.html">Reports</a>
+          <a class="hover:text-blue-700" href="/members.html">Members</a>
+          <a class="hover:text-blue-700" href="#contact">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded border" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="sr-only">Open menu</span>
+          <!-- Hamburger icon -->
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden pb-4" role="region">
+        <div class="flex flex-col gap-2">
+          <a class="px-2 py-2 rounded hover:bg-gray-100" href="/">Home</a>
+          <a class="px-2 py-2 rounded hover:bg-gray-100" href="/reports.html">Reports</a>
+          <a class="px-2 py-2 rounded hover:bg-gray-100" href="/members.html">Members</a>
+          <a class="px-2 py-2 rounded hover:bg-gray-100" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-blue-50 to-white border-b">
+    <div class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-semibold leading-tight">Advice on energy policy for the nation</h1>
+        <p class="mt-4 text-lg text-gray-700">The National Petroleum Council (NPC) provides independent advice to the U.S. Secretary of Energy on matters related to oil, natural gas, and energy systems.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="/reports.html" class="inline-flex items-center justify-center rounded-lg bg-blue-700 text-white px-5 py-3 font-medium hover:bg-blue-800">View Reports</a>
+          <a href="/members.html" class="inline-flex items-center justify-center rounded-lg border px-5 py-3 font-medium hover:bg-gray-50">Meet the Members</a>
+        </div>
+      </div>
+      <div>
+        <div class="bg-white rounded-2xl shadow p-6 border">
+          <h2 class="text-xl font-semibold">Quick Links</h2>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-3 text-blue-700">
+            <li><a class="block p-3 rounded hover:bg-blue-50" href="/reports.html#recent">Latest Reports</a></li>
+            <li><a class="block p-3 rounded hover:bg-blue-50" href="/reports.html#archives">Report Archives</a></li>
+            <li><a class="block p-3 rounded hover:bg-blue-50" href="/members.html#roster">Council Roster</a></li>
+            <li><a class="block p-3 rounded hover:bg-blue-50" href="#contact">Contact NPC</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Mission -->
+  <section id="main" class="max-w-7xl mx-auto px-4 py-14">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl font-semibold">About the Council</h2>
+        <p class="mt-4 leading-7 text-gray-700">Established as a Federal Advisory Committee, the NPC provides advice and recommendations to the U.S. Secretary of Energy. Council reports are developed by diverse committees of experts and are publicly available.</p>
+      </div>
+      <aside class="bg-white border rounded-xl p-6 shadow-sm">
+        <h3 class="font-semibold">Key Resources</h3>
+        <ul class="mt-3 space-y-2 list-disc list-inside">
+          <li><a class="text-blue-700 hover:underline" href="/reports.html">NPC Reports</a></li>
+          <li><a class="text-blue-700 hover:underline" href="/members.html">Members & Committees</a></li>
+          <li><a class="text-blue-700 hover:underline" href="#contact">Contact Information</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="bg-gray-100 border-t">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold">Contact</h3>
+        <address class="not-italic mt-3 text-gray-700">
+          NPC Mailing Address:<br />
+          1101 Vermont Avenue, NW<br />
+          Suite 300<br />
+          Washington, D.C. 20005
+        </address>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Telephone & Email</h3>
+        <p class="mt-3 text-gray-700"><span class="font-medium">Telephone:</span> (202) 393-6100</p>
+        <p class="mt-1 text-gray-700"><span class="font-medium">E‑Mail (general information):</span> <a class="text-blue-700 hover:underline" href="mailto:info@npc.org">info@npc.org</a></p>
+        <p class="mt-1 text-gray-700"><span class="font-medium">E‑Mail (web content):</span> <a class="text-blue-700 hover:underline" href="mailto:webmaster@npc.org">webmaster@npc.org</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Links</h3>
+        <ul class="mt-3 space-y-2">
+          <li><a class="text-blue-700 hover:underline" href="/reports.html">Reports</a></li>
+          <li><a class="text-blue-700 hover:underline" href="/members.html">Members</a></li>
+          <li><a class="text-blue-700 hover:underline" href="/privacy.html">Privacy</a></li>
+          <li><a class="text-blue-700 hover:underline" href="/accessibility.html">Accessibility (Section 508)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t">
+      <div class="max-w-7xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+        <p>&copy; <span id="year"></span> National Petroleum Council</p>
+        <p>Last updated <time id="lastUpdated" aria-live="polite"></time></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Footer year and basic last-updated stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const d = new Date(document.lastModified);
+    document.getElementById('lastUpdated').textContent = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+  </script>
+</body>
+</html>
